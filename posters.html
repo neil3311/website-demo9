@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Posters | Neil Arias</title>
+
+    <link rel="stylesheet" href="style4.css">
+
+    <!-- Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/cmn2tyc.css">
+    <link rel="stylesheet" href="https://use.typekit.net/wpz0hub.css">
+    <!-- favicon -->
+    <link rel="icon" type="icon" href="images/favicon01.png" />
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <nav>
+
+            <a href="index.html" class="logo">
+    <img src="images/favicon0.png" alt="Neil Arias Logo">
+        </a>  
+
+            <input class="menu-btn" type="checkbox" id="menu-btn">
+
+            <label class="menu-icon" for="menu-btn">
+                <span class="navicon"></span>
+            </label>
+
+            <ul class="menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about1.html">ABOUT</a></li>
+                <li><a href="graphicdesign1.html" class="active">GRAPHIC DESIGN</a></li>
+                <li><a href="photography1.html">PHOTOGRAPHY</a></li>
+                <li><a href="contact1.html">CONTACT</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- BLACK AND WHITE GALLERY -->
+
+    <main class="gallery-container">
+
+        <!-- PAGE TITLE -->
+
+        <section class="gallery-intro">
+
+            <h1>POSTERS</h1>
+
+            <p>
+                A collection of posters made with Adobe Illustator and Photoshop.
+            </p>
+
+        </section>
+
+
+        <!-- PHOTOGRAPHY COLLECTION -->
+
+        <section class="gallery-grid">
+
+            <!-- PHOTO 1 -->
+
+            <article class="gallery-item">
+
+                <button class="gallery-image-button"
+                        type="button"
+                        aria-label="Expand photograph: Photograph 1">
+
+                    <img src="images/poster1.jpg"
+                         alt="Black and white photograph 1">
+
+                </button>
+
+                <div class="photo-description">
+
+                    <h2>Miami Book Fair Poster 2027</h2>
+
+                    <p>
+                        A poster made for the Miami Book Fair 2027.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PHOTO 2 -->
+
+            <article class="gallery-item">
+
+                <button class="gallery-image-button"
+                        type="button"
+                        aria-label="Expand photograph: Photograph 2">
+
+                    <img src="images/ariasneil_cendrillonFINAL.jpg"
+                         alt="Black and white photograph 2">
+
+                </button>
+
+                <div class="photo-description">
+
+                    <h2>Cendrillon</h2>
+
+                    <p>
+                        Poster made for Cendrillon opera play.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PHOTO 3 -->
+
+            <article class="gallery-item">
+
+                <button class="gallery-image-button"
+                        type="button"
+                        aria-label="Expand photograph: Photograph 3">
+
+                    <img src="images/ariasneil_opera-FINAL0.jpg"
+                         alt="Black and white photograph 3">
+
+                </button>
+
+                <div class="photo-description">
+
+                    <h2>Opera Scenes</h2>
+
+                    <p>
+                        Poster made for Opera Scenes play.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PHOTO 4 -->
+
+            <article class="gallery-item">
+
+                <button class="gallery-image-button"
+                        type="button"
+                        aria-label="Expand photograph: Photograph 4">
+
+                    <img src="images/posters4-.jpg"
+                         alt="Black and white photograph 4">
+
+                </button>
+
+                <div class="photo-description">
+
+                    <h2>Fusion Restaurant</h2>
+
+                    <p>
+                        A project based on the name Fusion. Trying to
+                        create 3 different companies off of the same name.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PHOTO 5 -->
+
+            <article class="gallery-item">
+
+                <button class="gallery-image-button"
+                        type="button"
+                        aria-label="Expand photograph: Photograph 5">
+
+                    <img src="images/posters5.jpg"
+                         alt="Black and white photograph 5">
+
+                </button>
+
+                <div class="photo-description">
+
+                    <h2>Fusion Tech-Wear</h2>
+
+                    <p>
+                        Second part of the Fusion project. The company
+                        for this poster was a Tech-Wear promotional ad.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PHOTO 6 -->
+
+            <article class="gallery-item">
+
+                <button class="gallery-image-button"
+                        type="button"
+                        aria-label="Expand photograph: Photograph 6">
+
+                    <img src="images/posters6.jpg"
+                         alt="Black and white photograph 6">
+
+                </button>
+
+                <div class="photo-description">
+
+                    <h2>Fusion FPL</h2>
+
+                    <p>
+                        Final part on the Fusion project. Third poster
+                        being for the FPL company.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            
+
+
+            
+
+        </section>
+
+    </main>
+
+
+    <!-- EXPANDED IMAGE VIEWER -->
+
+    <dialog class="lightbox" id="lightbox">
+
+        <button class="lightbox-close"
+                type="button"
+                aria-label="Close expanded image">
+            &times;
+        </button>
+
+        <img id="lightbox-image" src="" alt="Expanded photograph">
+
+    </dialog>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>Neil Arias | 2026</p>
+
+    </footer>
+
+
+    <!-- IMAGE EXPANSION JAVASCRIPT -->
+
+    <script>
+
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightbox-image");
+        const closeButton = document.querySelector(".lightbox-close");
+
+        const galleryImages = document.querySelectorAll(
+            ".gallery-image-button"
+        );
+
+        galleryImages.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const image = button.querySelector("img");
+
+                lightboxImage.src = image.src;
+                lightboxImage.alt = image.alt;
+
+                lightbox.showModal();
+
+            });
+
+        });
+
+        closeButton.addEventListener("click", () => {
+
+            lightbox.close();
+
+        });
+
+        lightbox.addEventListener("click", (event) => {
+
+            if (event.target === lightbox) {
+                lightbox.close();
+            }
+
+        });
+
+        lightbox.addEventListener("close", () => {
+
+            lightboxImage.src = "";
+
+        });
+
+    </script>
+
+</body>
+</html>

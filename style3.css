@@ -1,0 +1,499 @@
+/* ----- GENERAL RESET ----- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #d0d0d0;
+    font-family: "acumin-pro", sans-serif;
+}
+
+
+        /* ----- ORIGINAL NAVIGATION ----- */
+
+        nav {
+            background-color: #fff;
+            box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        nav li a {
+            display: block;
+            padding: 20px 40px;
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            font-family: "acumin-pro", sans-serif;
+        }
+
+        .active {
+            background-color: #000;
+            color: #fff;
+        }
+
+        nav li a:hover,
+        nav .menu-btn:hover {
+            background-color: #717373;
+            color: #fff;
+        }
+
+        /* LOGO */
+
+        nav .logo {
+    display: flex;
+    float: left;
+    align-items: center;
+    padding: 8px 40px;
+}
+
+nav .logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+
+                /* MENU */
+
+                nav .menu {
+                    clear: both;
+                    max-height: 0;
+                    transition: max-height .2s ease-out;
+                }
+
+                /* MENU ICON */
+
+                nav .menu-icon {
+                    cursor: pointer;
+                    display: inline-block;
+                    float: right;
+                    padding: 28px 40px;
+                    position: relative;
+                    user-select: none;
+                }
+
+                nav .menu-icon .navicon {
+                    background: #000;
+                    display: block;
+                    height: 4px;
+                    position: relative;
+                    transition: background .2s ease-out;
+                    width: 24px;
+                }
+
+                nav .menu-icon .navicon:before,
+                nav .menu-icon .navicon:after {
+                    background: #000;
+                    content: '';
+                    display: block;
+                    height: 100%;
+                    position: absolute;
+                    transition: all .2s ease-out;
+                    width: 100%;
+                }
+
+                nav .menu-icon .navicon:before {
+                    top: 8px;
+                }
+
+                nav .menu-icon .navicon:after {
+                    top: -8px;
+                }
+
+                /* MENU BUTTON */
+
+                nav .menu-btn {
+                    display: none;
+                }
+
+                nav .menu-btn:checked ~ .menu {
+                    max-height: 300px;
+                }
+
+                nav .menu-btn:checked ~ .menu-icon .navicon {
+                    background: transparent;
+                }
+
+                nav .menu-btn:checked ~ .menu-icon .navicon:before {
+                    transform: rotate(-45deg);
+                }
+
+                nav .menu-btn:checked ~ .menu-icon .navicon:after {
+                    transform: rotate(45deg);
+                }
+
+                nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+                nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+                    top: 0;
+                }
+
+
+        /* DESKTOP NAVIGATION */
+
+        @media (min-width: 1000px) {
+
+            nav li {
+                float: left;
+            }
+
+            nav li a {
+                padding: 22px 40px;
+            }
+
+            nav .menu {
+                clear: none;
+                float: right;
+                max-height: none;
+            }
+
+            nav .menu-icon {
+                display: none;
+            }
+}
+
+
+/* ----- MAIN LAYOUT ----- */
+
+.hero {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    width: 96%;
+    height: 88vh;
+    margin: 10vh auto 2vh;
+    background-color: #f8f8f5;
+    overflow: hidden;
+}
+
+
+/* ----- LEFT SIDE ----- */
+
+.hero-text {
+    background-color: white;
+    padding: 30px 13%;
+    display: flex;
+    flex-direction: column;
+}
+
+            /* INTRODUCTION */
+
+            .intro {
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+            .intro h1 {
+                font-family: "baskerville-poster-pt", serif;
+                font-size: clamp(42px, 4.5vw, 65px);
+                font-weight: 900;
+                line-height: 1.15;
+                margin-bottom: 20px;
+            }
+
+            .intro h2 {
+                font-family: "acumin-pro", sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                margin-bottom: 25px;
+            }
+
+            .intro p {
+                font-family: "acumin-pro", sans-serif;
+                font-size: 15px;
+                line-height: 1.8;
+                font-weight: 300;
+                color: #666;
+                max-width: 480px;
+                margin-bottom: 35px;
+            }
+
+
+            /* ----- CONTACT BUTTON ----- */
+
+            .contact-button {
+                display: inline-block;
+                background-color: #111;
+                color: white;
+                text-decoration: none;
+                padding: 15px 30px;
+                font-size: 13px;
+                transition: 0.3s;
+            }
+
+            .contact-button:hover {
+                background-color: #777;
+            }
+
+
+/* ----- RIGHT SIDE IMAGE ----- */
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f5;
+
+    /* Creates the matching right-side margin */
+    padding: 30px 13%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(50%);
+    display: block;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: black;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+	align-content:baseline;
+}
+
+footer p {
+    color: white;
+    font-family: "acumin-pro", sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ----- MOBILE CONTACT PAGE ----- */
+
+@media (max-width: 767px) {
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 130px 25px 70px;
+        gap: 45px;
+    }
+
+    .contact-intro h1 {
+        font-size: 40px;
+    }
+
+    .contact-intro h3 {
+        font-size: 21px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+    }
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    width: 96%;
+    height: 88vh;
+    margin: 10vh auto 2vh;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+
+        /* =================================
+        PHOTOGRAPHY LANDING PAGE
+        ================================= */
+
+        .photography-container {
+    width: 96%;
+    min-height: 88vh;
+    margin: 10vh auto 2vh;
+
+    background-color: #f8f8f5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+}
+
+.photography-options {
+    width: 85%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+    align-items: center;
+}
+
+        /* CLICKABLE IMAGES */
+
+        .photo-button {
+            position: relative;
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+
+            text-decoration: none;
+            color: white;
+        }
+
+
+        /* IMAGES */
+
+        .photo-button img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            filter: grayscale(75%);
+
+            transition: 0.4s;
+        }
+
+
+        /* IMAGE OVERLAY */
+
+        .photo-overlay {
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            
+            padding: 45px;
+
+            background: linear-gradient(
+                transparent,
+                rgba(0, 0.5, 0.75, 1)
+            );
+
+            color: white;
+        }
+
+
+        /* IMAGE TITLES */
+
+        .photo-overlay h2 {
+            font-family: "baskerville-poster-pt", serif;
+
+            font-size: 40px;
+
+            font-weight: 900;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* VIEW COLLECTION TEXT */
+
+        .photo-overlay p {
+            font-family: "acumin-pro", sans-serif;
+
+            font-size: 15px;
+
+            letter-spacing: 2px;
+
+            font-weight: 500;
+            
+            margin-bottom: 10px;
+
+
+        }
+
+
+        /* HOVER EFFECT */
+
+        .photo-button:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+				/* =================================
+		PHOTOGRAPHY TITLE
+		================================= */
+
+		.photography-intro {
+			text-align: center;
+			margin-bottom: 45px;
+		}
+
+		.photography-intro h1 {
+			font-family: "baskerville-poster-pt", serif;
+			font-size: clamp(40px, 5vw, 65px);
+			font-weight: 900;
+			color: #000;
+			letter-spacing: 1px;
+		}
+
+        /* =================================
+        MOBILE RESPONSIVENESS
+        ================================= */
+
+        @media (max-width: 767px) {
+
+            .photography-container {
+                padding: 50px 20px;
+                min-height: auto;
+                margin-top: 90px;
+            }
+
+            .photography-options {
+                width: 100%;
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .photo-button {
+                height: 400px;
+            }
+
+            .photo-overlay h2 {
+                font-size: 25px;
+            }
+
+        }
+
+   .intro h1 {
+    font-family: "baskerville-poster-pt", serif;
+
+    font-size: clamp(42px, 4.5vw, 65px);
+
+    font-weight: 900;
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
